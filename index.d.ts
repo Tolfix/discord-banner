@@ -9,7 +9,7 @@ declare module "discord.js" {
          * @returns Promise<String|null>
          * @description Gives the banner from the client id.
          */
-        getUserBanner(clientId?: string): Promise<String|null>
+        getUserBanner(clientId?: string): Promise<string|null>
     }
 
     export interface User
@@ -20,7 +20,7 @@ declare module "discord.js" {
          * @returns Promise<String|null>
          * @description Gives the banner from the client id.
          */
-        getUserBanner(clientId?: string): Promise<String|null>
+        getUserBanner(clientId?: string): Promise<string|null>
     }
 }
 

@@ -1,7 +1,8 @@
 import { Client } from "discord.js";
 
 declare module "discord.js" {
-    export interface ClientUser {
+    export interface ClientUser
+    {
         /**
          * 
          * @param {String} clientId 
@@ -11,7 +12,8 @@ declare module "discord.js" {
         getUserBanner(clientId?: string): Promise<String|null>
     }
 
-    export interface User {
+    export interface User
+    {
         /**
          * 
          * @param {String} clientId 
@@ -22,6 +24,7 @@ declare module "discord.js" {
     }
 }
 
-declare module "discord-banner" {
+declare module "discord-banner"
+{
     export default function (client: Client): void
 }

@@ -8,18 +8,23 @@
 Gives possibilities to get an discord's user banner.
 
 # Examples
+
+With discord.js
 ```js
+// initializes the package.
+// Has to go before client!
+require("discord-banner")();
+
 // Creating a new client.
 const client = new (require("discord.js").Client);
-// initializes the package.
-require("discord-banner")(client);
 
 client.on("message", async (message) => {
-    // Possible to get it from the ClientUser.
-    console.log(await client.user.getUserBanner("269870630738853888"))
+    // Get the banner url.
+    console.log(await message.author.bannerURL())
 });
 ```
 
+Stand alone
 ```js
 const { GetUserBanner } = require("discord-banner");
 

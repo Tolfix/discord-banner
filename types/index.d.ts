@@ -8,8 +8,16 @@ declare module "discord.js" {
          * @param {String} clientId 
          * @returns Promise<String|null>
          * @description Gives the banner from the user id.
+         * @deprecated
          */
         getUserBanner(clientId?: string): Promise<string|null>
+        /**
+         * 
+         * @param {String} clientId 
+         * @returns Promise<String|null>
+         * @description Gives the banner from the user id.
+         */
+        bannerURL(clientId?: string): Promise<string|null>
     }
 
     export interface User
@@ -19,8 +27,16 @@ declare module "discord.js" {
          * @param {String} clientId 
          * @returns Promise<String|null>
          * @description Gives the banner from the user id.
+         * @deprecated
          */
         getUserBanner(clientId?: string): Promise<string|null>
+        /**
+         * 
+         * @param {String} clientId 
+         * @returns Promise<String|null>
+         * @description Gives the banner from the user id.
+         */
+        bannerURL(clientId?: string): Promise<string|null>
     }
 }
 
@@ -33,5 +49,5 @@ export function GetUserBanner(clientId: string, options: {token:string}): Promis
 
 declare module "discord-banner"
 {
-    export default function (client: Client): void
+    export default function (): void
 }

@@ -5,7 +5,11 @@
 </p>
 
 # Discord-Banner
+![](https://nodei.co/npm/discord-banner.svg)
 Gives possibilities to get an discord's user banner.
+
+# Installing
+``npm install discord-banner``
 
 # Examples
 

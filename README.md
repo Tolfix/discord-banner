@@ -1,12 +1,13 @@
 <p align="center">
   <img width="260" src="https://cdn.tolfix.com/images/TX-Small.png">
   <br/>
-  Discord-Banner
+  NPM PACKAGE | discord-banner
 </p>
 
 # Discord-Banner
 ![](https://nodei.co/npm/discord-banner.svg)
-Gives possibilities to get an discord's user banner.
+
+Gives possibilities to get a users banner from discord.
 
 # Installing
 ``npm install discord-banner``

@@ -1,3 +1,9 @@
+<p align="center">
+  <img width="260" src="https://cdn.tolfix.com/images/TX-Small.png">
+  <br/>
+  Discord-Banner
+</p>
+
 # Discord-Banner
 Gives possibilities to get an discord's user banner.
 
@@ -13,3 +19,6 @@ client.on("message", async (message) => {
     console.log(await client.user.getUserBanner("269870630738853888"))
 });
 ```
+
+# Discord
+[![Discord](https://discord.com/api/guilds/833438897484595230/widget.png?style=banner4)](https://discord.gg/xHde7g93Yh)

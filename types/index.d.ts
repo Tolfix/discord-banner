@@ -1,4 +1,4 @@
-import { Client } from "discord.js";
+import { Client, User } from "discord.js";
 
 declare module "discord.js" {
     export interface ClientUser
@@ -24,6 +24,10 @@ declare module "discord.js" {
     }
 }
 
+export class ExtendedUser extends User
+{
+    getUserBanner(clientId?: string): Promise<string|null>
+}
 declare module "discord-banner"
 {
     export default function (client: Client): void

@@ -1,6 +1,6 @@
 {
   "name": "discord-banner",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Discord.js banner extenstion",
   "main": "index.js",
   "types": "index.d.ts",
@@ -11,13 +11,22 @@
     "discord.js",
     "discord banner",
     "discord-banner",
-    "banner"
+    "banner",
+    "tolfx",
+    "tolfix"
   ],
-  "author": "",
+  "author": "Tolfx",
   "license": "ISC",
+  "homepage": "https://github.com/Tolfx/discord-banner",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tolfx/discord-banner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tolfx/discord-banner/issues"
+  },
   "dependencies": {
     "discord.js": "^12.5.3",
-    "dotenv": "^10.0.0",
     "node-fetch": "^2.6.1"
   }
 }

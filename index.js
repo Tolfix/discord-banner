@@ -1,4 +1,3 @@
-
 const { Client, Structures } = require("discord.js")
 const ExtendedUser = require("./ExtendedUser");
 

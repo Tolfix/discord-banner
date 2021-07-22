@@ -3,7 +3,7 @@ require("dotenv").config();
 const client = new (require("discord.js").Client);
 // initializes the package.
 require("../lib/index")(client);
-const { ExtendedUser } = require("../lib/index")
+const { ExtendedUser, GetUserBanner } = require("../lib/index")
 
 client.on("message", async (message) => {
     console.log(message.author instanceof ExtendedUser);

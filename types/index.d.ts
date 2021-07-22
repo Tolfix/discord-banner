@@ -28,6 +28,8 @@ export class ExtendedUser extends User
 {
     getUserBanner(clientId?: string): Promise<string|null>
 }
+
+export function GetUserBanner(clientId: string, options: {token:string}): Promise<string|null>
 declare module "discord-banner"
 {
     export default function (client: Client): void

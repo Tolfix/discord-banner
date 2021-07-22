@@ -20,5 +20,13 @@ client.on("message", async (message) => {
 });
 ```
 
+```js
+const { GetUserBanner } = require("discord-banner");
+
+GetUserBanner("a client id", {
+  token: "super secret token",
+}).then(banner => console.log(banner));
+```
+
 # Discord
 [![Discord](https://discord.com/api/guilds/833438897484595230/widget.png?style=banner4)](https://discord.gg/xHde7g93Yh)

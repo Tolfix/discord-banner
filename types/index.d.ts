@@ -7,7 +7,7 @@ declare module "discord.js" {
          * 
          * @param {String} clientId 
          * @returns Promise<String|null>
-         * @description Gives the banner from the client id.
+         * @description Gives the banner from the user id.
          */
         getUserBanner(clientId?: string): Promise<string|null>
     }
@@ -18,7 +18,7 @@ declare module "discord.js" {
          * 
          * @param {String} clientId 
          * @returns Promise<String|null>
-         * @description Gives the banner from the client id.
+         * @description Gives the banner from the user id.
          */
         getUserBanner(clientId?: string): Promise<string|null>
     }
@@ -30,6 +30,7 @@ export class ExtendedUser extends User
 }
 
 export function GetUserBanner(clientId: string, options: {token:string}): Promise<string|null>
+
 declare module "discord-banner"
 {
     export default function (client: Client): void

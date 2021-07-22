@@ -15,7 +15,7 @@ const client = new (require("discord.js").Client);
 require("discord-banner")(client);
 
 client.on("message", async (message) => {
-    // Possible to get it from the client.
+    // Possible to get it from the ClientUser.
     console.log(await client.user.getUserBanner("269870630738853888"))
 });
 ```

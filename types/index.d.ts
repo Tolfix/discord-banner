@@ -1,4 +1,4 @@
-import { Client, User } from "discord.js";
+import { User } from "discord.js";
 
 declare module "discord.js" {
     export interface ClientUser

@@ -49,12 +49,25 @@ export function GetUserBanner(clientId: string, options: {token:string}): Promis
 
 export interface ICacher
 {
-    token?: string;
+    [clientId: string]: {
+        bannerUrl: string,
+        cachedAt: Date
+    };
 }
 
 export const Cacher = new Map<keyof ICacher, ICacher[keyof ICacher]>();
 
+export const CacheGeneral = new Map<"token", string>();
+
+export function banner_url<user extends string>(userId: user): `https://cdn.discordapp.com/banners/${user}/`;
+
+export function reCache(userId: string): Boolean;
+
+export function CacheBanner(userId: string, bannerUrl: string): void;
+
 declare module "discord-banner"
 {
-    export default function (token?: string): void
+    export default function (token?: string, options?: {
+        cacheTime: number = 15*60*1000
+    }): void
 }

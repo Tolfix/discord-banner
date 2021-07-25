@@ -31,11 +31,24 @@ client.on("message", async (message) => {
 
 Stand alone
 ```js
+/**
+ * Option 1
+ * Include the token in the function
+ */
 const { GetUserBanner } = require("discord-banner");
 
 GetUserBanner("a client id", {
   token: "super secret token",
 }).then(banner => console.log(banner));
+
+/**
+ * Option 2
+ * Include the token in discord-banner and cache
+ */
+require("discord-banner")("super secret token")
+const { GetUserBanner } = require("discord-banner");
+
+GetUserBanner("a client id").then(banner => console.log(banner));
 ```
 
 # Discord

@@ -51,5 +51,29 @@ const { GetUserBanner } = require("discord-banner");
 GetUserBanner("a client id").then(banner => console.log(banner));
 ```
 
+# Configurations
+
+### Caching
+```js
+require("discord-banner")("super secret token", {
+  // Will recache each hour
+  // Default 15 min
+  cacheTime: 60*60*1000
+})
+const { GetUserBanner } = require("discord-banner");
+
+console.time("first_time");
+GetUserBanner("269870630738853888").then(banner => {
+    console.log(banner)
+    console.timeEnd("first_time") // Around 376.064ms
+
+    console.time("cache")
+    GetUserBanner("269870630738853888").then(banner_two => {
+        console.log(banner_two)
+        console.timeEnd("cache") // Around 0.731ms
+    });
+});
+```
+
 # Discord
 [![Discord](https://discord.com/api/guilds/833438897484595230/widget.png?style=banner4)](https://discord.gg/xHde7g93Yh)

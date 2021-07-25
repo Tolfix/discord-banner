@@ -47,6 +47,13 @@ export class ExtendedUser extends User
 
 export function GetUserBanner(clientId: string, options: {token:string}): Promise<string|null>
 
+export interface ICacher
+{
+    token: string;
+}
+
+export const Cacher = new Map<keyof ICacher, ICacher[keyof ICacher]>();
+
 declare module "discord-banner"
 {
     export default function (): void

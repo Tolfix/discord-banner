@@ -52,12 +52,13 @@ export interface ICacher
     [clientId: string]: {
         bannerUrl: string,
         cachedAt: Date
+    } | {
+        token: string;
+        cache_time: number;
     };
-}
+} 
 
 export const Cacher = new Map<keyof ICacher, ICacher[keyof ICacher]>();
-
-export const CacheGeneral = new Map<"token", string>();
 
 export function banner_url<user extends string>(userId: user): `https://cdn.discordapp.com/banners/${user}/`;
 
@@ -68,6 +69,6 @@ export function CacheBanner(userId: string, bannerUrl: string): void;
 declare module "discord-banner"
 {
     export default function (token?: string, options?: {
-        cacheTime: number = 15*60*1000
+        cacheTime: number;
     }): void
 }

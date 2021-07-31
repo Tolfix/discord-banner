@@ -42,10 +42,39 @@ declare module "discord.js" {
 
 export class ExtendedUser extends User
 {
+    /**
+     * 
+     * @param clientId 
+     * @deprecated
+     */
     getUserBanner(clientId?: string): Promise<string|null>
+
+    /**
+     * 
+     * @param {String} userId 
+     * @returns Promise<string|null>
+     * @description Gives the banner from the user id.
+     */
+    async bannerURL(userId = this.id): Promise<null | string>
 }
 
+/**
+ * 
+ * @param clientId 
+ * @param options 
+ * @deprecated
+ */
 export function GetUserBanner(clientId: string, options: {token:string}): Promise<string|null>
+
+/**
+ * 
+ * @param {string} userId The user id
+ * @param {{
+ * token?: string
+ * }} options 
+ * @returns Promise<{ banner: string | null, banner_color | null: string, banner_url: string | null }>
+ */
+export function getUserBanner(clientId: string, options: { token: string }): Promise<{ banner: string | null, banner_color: string | null, banner_url: string | null }>
 
 export interface ICacher
 {

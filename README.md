@@ -35,20 +35,20 @@ Stand alone
  * Option 1
  * Include the token in the function
  */
-const { GetUserBanner } = require("discord-banner");
+const { getUserBanner } = require("discord-banner");
 
-GetUserBanner("a client id", {
+getUserBanner("a client id", {
   token: "super secret token",
-}).then(banner => console.log(banner));
+}).then(banner => console.log(banner.banner_url));
 
 /**
  * Option 2
  * Include the token in discord-banner and cache
  */
 require("discord-banner")("super secret token")
-const { GetUserBanner } = require("discord-banner");
+const { getUserBanner } = require("discord-banner");
 
-GetUserBanner("a client id").then(banner => console.log(banner));
+GetUserBanner("a client id").then(banner => console.log(banner.banner_url));
 ```
 
 # Configurations

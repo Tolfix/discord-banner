@@ -14,10 +14,14 @@ declare module "discord.js" {
         /**
          * 
          * @param {String} clientId 
+         * @param {{
+         * size?: 1024,
+         * format?: "png" | "jpg" | "gif"
+         * }} options 
          * @returns Promise<String|null>
          * @description Gives the banner from the user id.
          */
-        bannerURL(clientId?: string): Promise<string|null>
+        bannerURL(clientId?: string, options?: BannerOptionsStandAlone): Promise<BannerReturns["banner_url"] | null>
     }
 
     export interface User
@@ -33,10 +37,14 @@ declare module "discord.js" {
         /**
          * 
          * @param {String} clientId 
+         * @param {{
+         * size?: 1024,
+         * format?: "png" | "jpg" | "gif"
+         * }} options 
          * @returns Promise<String|null>
          * @description Gives the banner from the user id.
          */
-        bannerURL(clientId?: string): Promise<string|null>
+        bannerURL(clientId?: string, options?: BannerOptionsStandAlone): Promise<BannerReturns["banner_url"] | null>
     }
 }
 
@@ -51,11 +59,32 @@ export class ExtendedUser extends User
 
     /**
      * 
-     * @param {String} userId 
+     * @param {String} userId
+     * @param {{
+     * size?: 1024,
+     * format?: "png" | "jpg" | "gif"
+     * }} options 
      * @returns Promise<string|null>
      * @description Gives the banner from the user id.
      */
     async bannerURL(userId = this.id): Promise<null | string>
+}
+
+export interface BannerOptions
+{
+    size?: 16 | 32 | 64 | 128 | 256 | 512 | 1024;
+    format?: "jpg" | "png" | "gif";
+}
+
+export interface BannerOptionsStandAlone extends BannerOptions {
+    token?: string;
+}
+
+export interface BannerReturns
+{
+    banner: string | null;
+    banner_color: string | null;
+    banner_url: string | null;
 }
 
 /**
@@ -64,22 +93,24 @@ export class ExtendedUser extends User
  * @param options 
  * @deprecated
  */
-export function GetUserBanner(clientId: string, options: {token:string}): Promise<string|null>
+export function GetUserBanner(clientId: string, options: { token: string }): Promise<string|null>
 
 /**
  * 
  * @param {string} userId The user id
  * @param {{
  * token?: string
+ * size?: 1024,
+ * format?: "png" | "jpg" | "gif"
  * }} options 
  * @returns Promise<{ banner: string | null, banner_color | null: string, banner_url: string | null }>
  */
-export function getUserBanner(clientId: string, options: { token: string }): Promise<{ banner: string | null, banner_color: string | null, banner_url: string | null }>
+export function getUserBanner(clientId: string, options?: BannerOptionsStandAlone): Promise<BannerReturns>
 
 export interface ICacher
 {
     [clientId: string]: {
-        bannerUrl: string,
+        data: BannerReturns,
         cachedAt: Date
     } | {
         token: string;

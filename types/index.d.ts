@@ -30,21 +30,6 @@ declare module "discord.js" {
     }
 }
 
-export class ExtendedUser extends User
-{
-    /**
-     * 
-     * @param {String} userId
-     * @param {{
-     * size?: 1024,
-     * format?: "png" | "jpg" | "gif"
-     * }} options 
-     * @returns Promise<string|null>
-     * @description Gives the banner from the user id.
-     */
-    async bannerURL(options: BannerOptions): Promise<null | string>
-}
-
 export interface BannerOptions
 {
     size?: 16 | 32 | 64 | 128 | 256 | 512 | 1024;

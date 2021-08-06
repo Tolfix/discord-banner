@@ -13,6 +13,7 @@ declare module "discord.js" {
          * @description Gives the banner from the user id.
          */
         bannerURL(options?: BannerOptions): Promise<BannerReturns["url"] | null>
+        banner: Promise<Banner>;
     }
 
     export interface User
@@ -27,6 +28,7 @@ declare module "discord.js" {
          * @description Gives the banner from the user id.
          */
         bannerURL(options?: BannerOptions): Promise<BannerReturns["url"] | null>
+        banner: Promise<Banner>;
     }
 }
 
@@ -38,6 +40,12 @@ export interface BannerOptions
 
 export interface BannerOptionsStandAlone extends BannerOptions {
     token?: string;
+}
+
+export interface Banner
+{
+    hash: string;
+    color: string;
 }
 
 export interface BannerReturns

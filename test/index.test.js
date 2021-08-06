@@ -3,13 +3,14 @@ require("dotenv").config();
 require("../lib/index")(process.env.TOKEN);
 const client = new (require("discord.js").Client);
 // initializes the package.
-const { ExtendedUser, getUserBanner } = require("../lib/index")
+// const { ExtendedUser, getUserBanner } = require("../lib/index")
 
 client.on("message", async (message) => {
     if(message.author.bot) return;
-    // message.channel.send(await message.author.bannerURL());
-    if(message.author.id === "269870630738853888")
-        return console.log(message.mentions.users.first() ? await message.mentions.users.first().bannerURL() : await message.author.bannerURL())
+    message.channel.send(await message.author.bannerURL({ format: "gif"}));
+    console.log(await message.author.banner)
+    // if(message.author.id === "269870630738853888")
+    //     return console.log(message.mentions.users.first() ? await message.mentions.users.first().bannerURL() : await message.author.bannerURL())
 });
 
 // console.time("first_time");
@@ -32,11 +33,11 @@ client.on("message", async (message) => {
 //     }, 1.2*60*1000)
 // });
 
-getUserBanner("754482040178737343", {
-    token: process.env.TOKEN,
-    format: "png"
-}).then((banner) => {
-    console.log(banner.url)
-})
+// getUserBanner("754482040178737343", {
+//     token: process.env.TOKEN,
+//     format: "png"
+// }).then((banner) => {
+//     console.log(banner.url)
+// })
 
 client.login(process.env.TOKEN)

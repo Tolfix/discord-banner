@@ -6,6 +6,9 @@
 
 # Discord-Banner
 ![](https://nodei.co/npm/discord-banner.svg)
+![](https://img.shields.io/npm/dm/discord-banner?style=for-the-badge)
+![](https://img.shields.io/npm/v/discord-banner?style=for-the-badge)
+![](https://img.shields.io/github/issues/Tolfx/discord-banner?style=plastic)
 
 Gives possibilities to get a users banner from discord.
 
@@ -26,6 +29,7 @@ const client = new (require("discord.js").Client);
 client.on("message", async (message) => {
     // Get the banner url.
     console.log(await message.author.bannerURL())
+    console.log(await message.author.banner) // { hash, color };
 });
 ```
 

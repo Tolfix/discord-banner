@@ -35,6 +35,8 @@ client.on("message", async (message) => {
 getUserBanner("754482040178737343", {
     token: process.env.TOKEN,
     format: "png"
-}).then(console.log)
+}).then((banner) => {
+    console.log(banner.url)
+})
 
 client.login(process.env.TOKEN)

@@ -1,6 +1,6 @@
 {
   "name": "discord-banner",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "Discord.js banner extenstion",
   "main": "lib/index.js",
   "types": "types/index.d.ts",

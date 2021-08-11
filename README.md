@@ -39,7 +39,7 @@ const { getUserBanner } = require("discord-banner");
 
 getUserBanner("a client id", {
   token: "super secret token",
-}).then(banner => console.log(banner.banner_url));
+}).then(banner => console.log(banner.url));
 
 /**
  * Option 2
@@ -48,7 +48,7 @@ getUserBanner("a client id", {
 require("discord-banner")("super secret token")
 const { getUserBanner } = require("discord-banner");
 
-getUserBanner("a client id").then(banner => console.log(banner.banner_url));
+getUserBanner("a client id").then(banner => console.log(banner.url));
 ```
 
 # Configurations

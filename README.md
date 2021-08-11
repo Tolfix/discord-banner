@@ -24,6 +24,24 @@ npm install discord-banner
 |-------|--------|
 |v13    | ✔      |
 |v12    | ✔      |
+
+# Troubleshoot
+### message.author.bannerURL() is not a function?
+When you create a new discord client, you need to make sure the package gets runned first before
+`Works`
+```js
+const { Client } = require("discord.js")
+require("discord-banner")();
+const client = new Client;
+```
+`Doesn't work`
+```js
+const { Client } = require("discord.js")
+const client = new Client;
+require("discord-banner")();
+```
+
+If it doesn't work don't be afraid to ask for help on our [`discord server`](https://discord.tolfix.com/)
 # Examples
 
 With discord.js

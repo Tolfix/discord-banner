@@ -5,15 +5,6 @@ declare module "discord.js" {
     {
         /**
          * 
-         * @param {String} clientId 
-         * @returns Promise<String|null>
-         * @description Gives the banner from the user id.
-         * @deprecated
-         */
-        getUserBanner(clientId?: string): Promise<string|null>
-        /**
-         * 
-         * @param {String} clientId 
          * @param {{
          * size?: 1024,
          * format?: "png" | "jpg" | "gif"
@@ -21,22 +12,14 @@ declare module "discord.js" {
          * @returns Promise<String|null>
          * @description Gives the banner from the user id.
          */
-        bannerURL(clientId?: string, options?: BannerOptionsStandAlone): Promise<BannerReturns["banner_url"] | null>
+        bannerURL(options?: BannerOptions): Promise<BannerReturns["url"] | null>
+        banner: Promise<Banner>;
     }
 
     export interface User
     {
         /**
          * 
-         * @param {String} clientId 
-         * @returns Promise<String|null>
-         * @description Gives the banner from the user id.
-         * @deprecated
-         */
-        getUserBanner(clientId?: string): Promise<string|null>
-        /**
-         * 
-         * @param {String} clientId 
          * @param {{
          * size?: 1024,
          * format?: "png" | "jpg" | "gif"
@@ -44,30 +27,9 @@ declare module "discord.js" {
          * @returns Promise<String|null>
          * @description Gives the banner from the user id.
          */
-        bannerURL(clientId?: string, options?: BannerOptionsStandAlone): Promise<BannerReturns["banner_url"] | null>
+        bannerURL(options?: BannerOptions): Promise<BannerReturns["url"] | null>
+        banner: Promise<Banner>;
     }
-}
-
-export class ExtendedUser extends User
-{
-    /**
-     * 
-     * @param clientId 
-     * @deprecated
-     */
-    getUserBanner(clientId?: string): Promise<string|null>
-
-    /**
-     * 
-     * @param {String} userId
-     * @param {{
-     * size?: 1024,
-     * format?: "png" | "jpg" | "gif"
-     * }} options 
-     * @returns Promise<string|null>
-     * @description Gives the banner from the user id.
-     */
-    async bannerURL(userId = this.id): Promise<null | string>
 }
 
 export interface BannerOptions
@@ -80,20 +42,18 @@ export interface BannerOptionsStandAlone extends BannerOptions {
     token?: string;
 }
 
-export interface BannerReturns
+export interface Banner
 {
-    banner: string | null;
-    banner_color: string | null;
-    banner_url: string | null;
+    hash: string;
+    color: string;
 }
 
-/**
- * 
- * @param clientId 
- * @param options 
- * @deprecated
- */
-export function GetUserBanner(clientId: string, options: { token: string }): Promise<string|null>
+export interface BannerReturns
+{
+    hash: string | null;
+    color: string | null;
+    url: string | null;
+}
 
 /**
  * 

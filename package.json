@@ -1,6 +1,6 @@
 {
   "name": "discord-banner",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "Discord.js banner extenstion",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
@@ -11,6 +11,8 @@
     "discord.js",
     "discord banner",
     "discord-banner",
+    "discord profile",
+    "discord user profile",
     "banner",
     "tolfx",
     "tolfix"
